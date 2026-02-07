@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Gmail Smart Cleaner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #202124;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f71b8 0%, #1557a0 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #1f71b8;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8eaed;
+        }
+
+        h3 {
+            color: #3c4043;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            list-style-position: inside;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .check {
+            color: #0f9d58;
+            font-weight: bold;
+        }
+
+        .cross {
+            color: #d33427;
+            font-weight: bold;
+        }
+
+        .warning {
+            color: #f57c00;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table thead {
+            background-color: #f8f9fa;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        table th {
+            background-color: #e8eaed;
+            font-weight: 600;
+            color: #202124;
+        }
+
+        table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .section-divider {
+            border-top: 1px solid #dadce0;
+            margin: 40px 0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            color: #5f6368;
+            margin-top: 40px;
+        }
+
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #1f71b8;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box {
+            background-color: #e8f0fe;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .last-updated {
+            color: #5f6368;
+            font-size: 0.9em;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #dadce0;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔒 Privacy Policy</h1>
+        <p>Gmail Smart Cleaner Chrome Extension</p>
+    </header>
+
+    <div class="container">
+        <div class="toc">
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#what-we-collect">What Data We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Data</a></li>
+                <li><a href="#storage">Data Storage & Security</a></li>
+                <li><a href="#controls">Your Privacy Controls</a></li>
+                <li><a href="#third-party">Third-Party Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <section id="overview">
+            <h2>📋 Overview</h2>
+            <p>Gmail Smart Cleaner ("the Extension") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your data.</p>
+            
+            <p><strong>Extension Purpose:</strong> Gmail Smart Cleaner safely archives Gmail emails with a preview feature and 30-second undo functionality.</p>
+            
+            <p><strong>Data Philosophy:</strong> We collect the absolute minimum data necessary to provide our service. Your data stays on your device.</p>
+
+            <div class="highlight">
+                <strong>✓ Key Points:</strong>
+                <ul>
+                    <li>No passwords stored (OAuth 2.0 used)</li>
+                    <li>All data stored locally on your device</li>
+                    <li>Data NOT transmitted to external servers</li>
+                    <li>Full user control over your data</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="what-we-collect">
+            <h2>📊 What Data We Collect</h2>
+
+            <h3>1. Email Address & Display Name</h3>
+            <p><span class="check">✓ COLLECTED</span></p>
+            <ul>
+                <li>Your Gmail address (e.g., user@gmail.com)</li>
+                <li>Your display name from Gmail profile</li>
+                <li>Used to display greeting: "Hi [Name]"</li>
+                <li>Confirms correct account is logged in</li>
+                <li>Stored locally, never transmitted</li>
+            </ul>
+
+            <h3>2. OAuth Access Token</h3>
+            <p><span class="warning">⚠ COLLECTED (Secure)</span></p>
+            <ul>
+                <li>Generated by Google, NOT a password</li>
+                <li>Authorizes Gmail API requests</li>
+                <li>Expires automatically after 1 hour</li>
+                <li>Users can revoke anytime</li>
+                <li>Stored encrypted in local extension storage</li>
+            </ul>
+
+            <h3>3. Email Metadata (List View Only)</h3>
+            <p><span class="check">✓ COLLECTED</span></p>
+            <ul>
+                <li>Sender information</li>
+                <li>Email subject lines</li>
+                <li>Email dates</li>
+                <li><span class="cross">✗ NOT</span> email body content</li>
+                <li><span class="cross">✗ NOT</span> attachments</li>
+                <li><span class="cross">✗ NOT</span> full message text</li>
+            </ul>
+
+            <h3>4. Extension Settings & Preferences</h3>
+            <p><span class="check">✓ COLLECTED</span></p>
+            <ul>
+                <li>Your settings choices (toggles, preferences)</li>
+                <li>UI state (which screen you're viewing)</li>
+                <li>Undo timer state (30-second countdown)</li>
+                <li>All stored locally only</li>
+            </ul>
+
+            <h3>Data NOT Collected</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Status</th>
+                        <th>Why</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Passwords</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>OAuth 2.0 used instead</td>
+                    </tr>
+                    <tr>
+                        <td>Health Information</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>Not applicable to extension</td>
+                    </tr>
+                    <tr>
+                        <td>Financial Data</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>No payments involved</td>
+                    </tr>
+                    <tr>
+                        <td>Location/IP Address</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>No location services used</td>
+                    </tr>
+                    <tr>
+                        <td>Browser History</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>Extension doesn't monitor web</td>
+                    </tr>
+                    <tr>
+                        <td>Keystroke Logging</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>No keyboard monitoring</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics/Tracking</td>
+                        <td><span class="cross">✗ NOT collected</span></td>
+                        <td>No tracking pixels or tags</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="how-we-use">
+            <h2>🎯 How We Use Your Data</h2>
+
+            <h3>Core Functions</h3>
+            <ul>
+                <li><strong>Authentication:</strong> Sign you in with your Gmail account</li>
+                <li><strong>Email Display:</strong> Show list of emails for preview</li>
+                <li><strong>Archive Action:</strong> Archive emails you select</li>
+                <li><strong>Undo Feature:</strong> Allow restoration within 30 seconds</li>
+                <li><strong>Statistics:</strong> Display unread count and large email count</li>
+                <li><strong>Top Senders:</strong> Show list of most-emailed senders</li>
+            </ul>
+
+            <h3>Data NOT Used For</h3>
+            <ul>
+                <li><span class="cross">✗</span> Marketing or advertising</li>
+                <li><span class="cross">✗</span> Profiling or behavioral analysis</li>
+                <li><span class="cross">✗</span> Sharing with third parties</li>
+                <li><span class="cross">✗</span> Building user profiles</li>
+                <li><span class="cross">✗</span> A/B testing or experimentation</li>
+                <li><span class="cross">✗</span> Selling to data brokers</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="storage">
+            <h2>🔐 Data Storage & Security</h2>
+
+            <h3>Where Data Is Stored</h3>
+            <p><strong>Locally on Your Device:</strong></p>
+            <ul>
+                <li>Extension storage (chrome.storage.local)</li>
+                <li>Encrypted by Chrome/OS</li>
+                <li>NOT transmitted to servers</li>
+                <li>NOT backed up to cloud</li>
+                <li>Only accessible by this extension</li>
+            </ul>
+
+            <p><strong>On Google's Servers:</strong></p>
+            <ul>
+                <li>Your emails (in Gmail)</li>
+                <li>Access logs (standard Google logging)</li>
+                <li>Governed by Google's Privacy Policy</li>
+            </ul>
+
+            <p><strong>NOT Stored Anywhere:</strong></p>
+            <ul>
+                <li>Our servers (we have none for this data)</li>
+                <li>Third-party analytics services</li>
+                <li>Advertising networks</li>
+                <li>Cloud backup services</li>
+            </ul>
+
+            <h3>Security Measures</h3>
+            <ul>
+                <li><strong>OAuth 2.0:</strong> Industry-standard authentication</li>
+                <li><strong>Token Expiration:</strong> Tokens expire after 1 hour</li>
+                <li><strong>Local Storage:</strong> Data never leaves your device</li>
+                <li><strong>No Passwords:</strong> Passwords never handled by extension</li>
+                <li><strong>User Control:</strong> Can revoke access anytime</li>
+            </ul>
+
+            <h3>Data Retention</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                        <th>Deletion Trigger</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>OAuth Token</td>
+                        <td>1 hour (auto-refresh) or until logout</td>
+                        <td>Sign Out or extension uninstall</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td>Until logout</td>
+                        <td>Sign Out</td>
+                    </tr>
+                    <tr>
+                        <td>Settings/Preferences</td>
+                        <td>Until cleared</td>
+                        <td>Clear all site data or uninstall</td>
+                    </tr>
+                    <tr>
+                        <td>Undo State</td>
+                        <td>30 seconds</td>
+                        <td>Auto-deleted after 30 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>Email List (Memory)</td>
+                        <td>Current session</td>
+                        <td>Extension closed or refreshed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="controls">
+            <h2>🎮 Your Privacy Controls</h2>
+
+            <h3>Sign Out</h3>
+            <p>Click "Sign Out" in the extension to:</p>
+            <ul>
+                <li>Immediately delete all stored data</li>
+                <li>Revoke Gmail API access</li>
+                <li>Clear OAuth tokens</li>
+                <li>Return to login screen</li>
+            </ul>
+
+            <h3>Clear Extension Data</h3>
+            <p>Go to chrome://extensions/ → Extension Details → "Clear all site data"</p>
+            <ul>
+                <li>Removes all stored information</li>
+                <li>Resets extension to default state</li>
+                <li>Does NOT uninstall extension</li>
+            </ul>
+
+            <h3>Revoke Google Access</h3>
+            <p>Visit <a href="https://myaccount.google.com/permissions" target="_blank">Google Account Permissions</a></p>
+            <ul>
+                <li>Remove "Gmail Smart Cleaner" access</li>
+                <li>Blocks all future API requests</li>
+                <li>Extension cannot access Gmail anymore</li>
+            </ul>
+
+            <h3>Uninstall Extension</h3>
+            <p>Go to chrome://extensions/ → "Remove"</p>
+            <ul>
+                <li>Deletes all extension files</li>
+                <li>Removes all stored data</li>
+                <li>Complete removal from Chrome</li>
+            </ul>
+
+            <h3>Privacy in Chrome</h3>
+            <ul>
+                <li>Extension respects Chrome's privacy settings</li>
+                <li>No cross-site tracking</li>
+                <li>No fingerprinting</li>
+                <li>No persistent unique identifiers</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="third-party">
+            <h2>🔗 Third-Party Services</h2>
+
+            <h3>Google Gmail API</h3>
+            <p><strong>What we share:</strong> Email metadata for archiving/deletion operations</p>
+            <p><strong>Why:</strong> Required to access and modify emails</p>
+            <p><strong>Google's Privacy:</strong> Governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></p>
+            <p><strong>Your Control:</strong> Revoke at any time via <a href="https://myaccount.google.com/permissions" target="_blank">Google Account Permissions</a></p>
+
+            <h3>No Other Third Parties</h3>
+            <p>Extension does NOT use:</p>
+            <ul>
+                <li><span class="cross">✗</span> Analytics services (Google Analytics, Mixpanel, etc.)</li>
+                <li><span class="cross">✗</span> Crash reporting (Sentry, Bugsnag, etc.)</li>
+                <li><span class="cross">✗</span> Advertising networks</li>
+                <li><span class="cross">✗</span> Marketing services</li>
+                <li><span class="cross">✗</span> CDNs for content delivery</li>
+                <li><span class="cross">✗</span> Cloud storage services</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="contact">
+            <h2>📞 Contact & Questions</h2>
+
+            <div class="contact-box">
+                <h3>Privacy Questions?</h3>
+                <p>If you have concerns about this privacy policy or how your data is handled:</p>
+                <ul>
+                    <li>Review this policy (you're reading it!)</li>
+                    <li>Check the <a href="https://github.com/srwaditya/gmail-smart-cleaner" target="_blank">source code on GitHub</a> (open source)</li>
+                    <li>Review Chrome Web Store listing for contact information</li>
+                </ul>
+            </div>
+
+            <h3>Data Subject Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Know what data we store</li>
+                <li><strong>Delete:</strong> Remove all your data anytime</li>
+                <li><strong>Control:</strong> Manage permissions via Chrome</li>
+                <li><strong>Revoke:</strong> Withdraw Google API access</li>
+                <li><strong>Transparency:</strong> Understand how we use data</li>
+            </ul>
+
+            <h3>GDPR Compliance</h3>
+            <p>If you're in the EU, you have GDPR rights:</p>
+            <ul>
+                <li>Right to access your personal data</li>
+                <li>Right to delete your data</li>
+                <li>Right to restrict processing</li>
+                <li>Right to data portability</li>
+                <li>Right to withdraw consent</li>
+            </ul>
+
+            <p>Our extension respects these rights through the controls listed above.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section>
+            <h2>📝 Policy Updates</h2>
+            <p>This privacy policy may be updated to reflect new features or changes in our practices. Significant changes will be communicated to users before implementation.</p>
+            
+            <div class="highlight">
+                <strong>Future Data Collection:</strong>
+                <p>We will NOT collect:</p>
+                <ul>
+                    <li><span class="cross">✗</span> Analytics or usage metrics</li>
+                    <li><span class="cross">✗</span> Crash reports with personal data</li>
+                    <li><span class="cross">✗</span> User behavior tracking</li>
+                    <li><span class="cross">✗</span> More data than listed above</li>
+                </ul>
+                <p>Any future data collection will require explicit user consent.</p>
+            </div>
+        </section>
+
+        <footer>
+            <h3>Summary</h3>
+            <p>
+                Gmail Smart Cleaner is designed with privacy first. We collect minimal data, store it locally, 
+                and give you full control. Your Gmail remains yours. Your data remains yours.
+            </p>
+            
+            <div class="last-updated">
+                <p><strong>Last Updated:</strong> February 7, 2026</p>
+                <p><strong>Version:</strong> 1.0.0</p>
+                <p>For the latest version, visit <a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
