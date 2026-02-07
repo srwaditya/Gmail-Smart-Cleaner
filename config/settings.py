@@ -1,7 +1,7 @@
 """Configuration settings for Gmail Smart Cleaner."""
 import os
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List
 
 from pydantic_settings import BaseSettings
 
@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     token_path: str = "token.json"
     
     # Gmail API scopes
-    scopes: list[str] = ["https://www.googleapis.com/auth/gmail.modify"]
+    scopes: List[str] = ["https://www.googleapis.com/auth/gmail.modify"]
     
     # Default batch size for operations
     default_batch_size: int = 100

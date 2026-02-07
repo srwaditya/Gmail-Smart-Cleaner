@@ -1,6 +1,7 @@
 """Gmail API client wrapper."""
 import os
 import pickle
+import logging
 from pathlib import Path
 from typing import Optional, List, Dict, Any
 
@@ -11,6 +12,9 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 from config.settings import settings
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 
 class GmailClient:
@@ -110,7 +114,7 @@ class GmailClient:
             return emails
         
         except HttpError as error:
-            print(f"An error occurred: {error}")
+            logger.error(f"Failed to fetch emails: {error}")
             return []
 
     def _get_email_metadata(self, message_id: str) -> Optional[Dict[str, Any]]:
@@ -149,7 +153,7 @@ class GmailClient:
             }
         
         except HttpError as error:
-            print(f"Error fetching email {message_id}: {error}")
+            logger.error(f"Error fetching email {message_id}: {error}")
             return None
 
     def trash_emails(self, message_ids: List[str]) -> int:
@@ -172,7 +176,7 @@ class GmailClient:
                 ).execute()
                 trashed_count += 1
             except HttpError as error:
-                print(f"Error trashing email {message_id}: {error}")
+                logger.error(f"Error trashing email {message_id}: {error}")
         
         return trashed_count
 
@@ -196,7 +200,7 @@ class GmailClient:
                 ).execute()
                 deleted_count += 1
             except HttpError as error:
-                print(f"Error deleting email {message_id}: {error}")
+                logger.error(f"Error deleting email {message_id}: {error}")
         
         return deleted_count
 
@@ -212,5 +216,5 @@ class GmailClient:
             labels = results.get("labels", [])
             return [{"id": label["id"], "name": label["name"]} for label in labels]
         except HttpError as error:
-            print(f"Error fetching labels: {error}")
+            logger.error(f"Error fetching labels: {error}")
             return []

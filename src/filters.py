@@ -49,7 +49,10 @@ class DateFilter(EmailFilter):
         try:
             from email.utils import parsedate_to_datetime
             email_date = parsedate_to_datetime(email_date_str)
-            return email_date < self.before_date
+            # Make both timezone-naive for comparison
+            email_date_naive = email_date.replace(tzinfo=None)
+            before_date_naive = self.before_date.replace(tzinfo=None) if self.before_date.tzinfo else self.before_date
+            return email_date_naive < before_date_naive
         except (ValueError, TypeError):
             return False
 
@@ -58,7 +61,9 @@ class DateFilter(EmailFilter):
         if self.days_old:
             return f"older_than:{self.days_old}d"
         elif self.before_date:
-            date_str = self.before_date.strftime("%Y/%m/%d")
+            # Use date only without timezone for Gmail query
+            date_naive = self.before_date.replace(tzinfo=None) if self.before_date.tzinfo else self.before_date
+            date_str = date_naive.strftime("%Y/%m/%d")
             return f"before:{date_str}"
         return ""
 

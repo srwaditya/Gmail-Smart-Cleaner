@@ -58,9 +58,7 @@ class GmailCleaner:
         emails = self.client.get_emails(query=query, max_results=max_results)
         
         # Apply client-side filtering for accuracy
-        if email_filter and not isinstance(email_filter, CompositeFilter):
-            emails = [email for email in emails if email_filter.matches(email)]
-        elif email_filter and isinstance(email_filter, CompositeFilter):
+        if email_filter:
             emails = [email for email in emails if email_filter.matches(email)]
         
         return emails
