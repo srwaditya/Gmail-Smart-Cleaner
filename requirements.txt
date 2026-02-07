@@ -1,0 +1,8 @@
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.80.0
+click==8.1.7
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+tqdm==4.66.1
