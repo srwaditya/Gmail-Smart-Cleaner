@@ -26,7 +26,7 @@ const GmailAPI = (() => {
      */
     async function apiRequest(method, path, data = null) {
         try {
-            const token = await getAccessToken();
+            let token = await getAccessToken();
             const url = `${API_BASE}${path}`;
             const options = {
                 method: method,
@@ -40,13 +40,47 @@ const GmailAPI = (() => {
                 options.body = JSON.stringify(data);
             }
 
-            const response = await fetch(url, options);
+            let response = await fetch(url, options);
+            
+            // If 401, try to refresh token and retry once
+            if (response.status === 401) {
+                console.warn('[API] Got 401, attempting to refresh token...');
+                try {
+                    token = await Auth.refreshToken();
+                    options.headers['Authorization'] = `Bearer ${token}`;
+                    response = await fetch(url, options);
+                } catch (refreshError) {
+                    console.error('[API] Token refresh failed:', refreshError);
+                    // If refresh fails, clear token and reject
+                    chrome.storage.local.remove('accessToken');
+                    throw new Error('Authentication expired. Please sign in again.');
+                }
+            }
+            
+            // Handle 403 - Permission denied (check after retry)
+            if (response.status === 403) {
+                console.error('[API] Got 403 Forbidden - Insufficient permissions');
+                throw new Error('403');
+            }
             
             if (!response.ok) {
-                throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                console.error(`[API] HTTP ${response.status}: ${response.statusText}`);
+                throw new Error(`${response.status}`);
             }
 
-            return await response.json();
+            // Handle 204 No Content and other empty responses
+            if (response.status === 204 || response.headers.get('content-length') === '0') {
+                console.log('[API] Empty response (204 No Content)');
+                return {};
+            }
+
+            // Parse JSON only if there's actual content
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return await response.json();
+            }
+            
+            return {};
         } catch (error) {
             console.error('Gmail API Error:', error);
             throw error;
@@ -116,11 +150,13 @@ const GmailAPI = (() => {
      * Archive messages (move to archive/all mail)
      */
     async function archiveMessages(messageIds) {
+        if (!messageIds || messageIds.length === 0) {
+            throw new Error('No messages to archive');
+        }
+        
         const batchData = {
-            requests: messageIds.map(id => ({
-                removeLabelIds: ['INBOX'],
-                id: id
-            }))
+            ids: messageIds,
+            removeLabelIds: ['INBOX']
         };
         return apiRequest('POST', '/users/me/messages/batchModify', batchData);
     }
@@ -129,13 +165,24 @@ const GmailAPI = (() => {
      * Delete messages permanently
      */
     async function deleteMessages(messageIds) {
+        if (!messageIds || messageIds.length === 0) {
+            throw new Error('No messages to delete');
+        }
+        
+        console.log('[API] deleteMessages called with', messageIds.length, 'message IDs');
         const batchData = {
-            requests: messageIds.map(id => ({
-                id: id,
-                delete: true
-            }))
+            ids: messageIds
         };
-        return apiRequest('POST', '/users/me/messages/batchDelete', batchData);
+        console.log('[API] batchDelete request data:', JSON.stringify(batchData).substring(0, 100) + '...');
+        
+        try {
+            const result = await apiRequest('POST', '/users/me/messages/batchDelete', batchData);
+            console.log('[API] batchDelete success');
+            return result;
+        } catch (error) {
+            console.error('[API] batchDelete failed:', error.message);
+            throw error;
+        }
     }
 
     /**
@@ -239,3 +286,7 @@ const GmailAPI = (() => {
         scanInbox
     };
 })();
+
+// Expose globally and log success
+window.GmailAPI = GmailAPI;
+console.log('[API] GmailAPI module loaded successfully');
